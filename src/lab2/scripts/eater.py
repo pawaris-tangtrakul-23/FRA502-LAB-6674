@@ -103,8 +103,17 @@ class DummyNode(Node):
 
     def goal_pose_callback(self, msg):
         self.goal = 1
-        self.goal_x = msg.pose.position.x
-        self.goal_y = msg.pose.position.y
+        self.goal_x = msg.pose.position.x + 5.44
+        self.goal_y = msg.pose.position.y + 5.44
+        call = GivePosition.Request()
+        call.x = msg.pose.position.x +5.44
+        call.y = msg.pose.position.y +5.44
+        self.pizza_count += 1
+        self.mouse_pose = np.array([msg.pose.position.x+5.44, msg.pose.position.y+5.44])  # Fixed this line
+        self.num_pizza.append((self.mouse_pose[0], self.mouse_pose[1]))
+        if (len(self.num_pizza)<=5 ):
+            self.spawn_pizza_client.call_async(call)
+        
 
 
 def main(args=None):

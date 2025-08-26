@@ -49,8 +49,8 @@ class DummyNode(Node):
         t.header.frame_id = "odom"
         t.child_frame_id = "odom1"
 
-        t.transform.translation.x = self.turtle1_pose[0] - 5
-        t.transform.translation.y = self.turtle1_pose[1] - 5
+        t.transform.translation.x = self.turtle1_pose[0] - 5.44
+        t.transform.translation.y = self.turtle1_pose[1] - 5.44
         t.transform.rotation.x = q[0]
         t.transform.rotation.y = q[1]
         t.transform.rotation.z = q[2]
@@ -84,8 +84,8 @@ class DummyNode(Node):
         t.header.frame_id = "odom"
         t.child_frame_id = "odom2"
 
-        t.transform.translation.x = self.turtle2_pose[0] - 5
-        t.transform.translation.y = self.turtle2_pose[1] - 5
+        t.transform.translation.x = self.turtle2_pose[0] - 5.44
+        t.transform.translation.y = self.turtle2_pose[1] - 5.44
         t.transform.rotation.x = q[0]
         t.transform.rotation.y = q[1]
         t.transform.rotation.z = q[2]
