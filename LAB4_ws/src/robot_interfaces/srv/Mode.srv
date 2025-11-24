@@ -1,7 +1,0 @@
-# Request
-int64 data
-geometry_msgs/Point position
-geometry_msgs/Quaternion orientation
----
-# Response
-bool success
