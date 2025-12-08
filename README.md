@@ -2,6 +2,104 @@
 
 A ROS2 package that implements a multi-phase turtle simulation involving pizza collection, path recording, swarm coordination, and automated cleanup across two Turtlesim environments.
 
+## System Architecture
+
+![alt text](<sim1sim1.png>)
+
+
+### Nodes
+
+- /sim1/sim1
+- /sim2/sim2
+- /sim1/teleoper
+- /sim2/copy
+- /teleop_twist_keyboard
+
+### Topics
+
+- /eraser_spawn_pose
+- /sim1/eraser/cmd_vel
+- /sim1/eraser/pizza_count
+- /sim1/eraser/pose
+- /sim1/mouse_position
+- /sim1/set_max_pizza
+- /sim1/teleoper/cmd_vel
+- /sim1/teleoper/pizza_count
+- /sim1/teleoper/pose
+- /sim1/teleoper/scan
+- /sim2/Foxy/cmd_vel
+- /sim2/Foxy/pizza_count
+- /sim2/Foxy/pose
+- /sim2/Foxy/scan
+- /sim2/Humble/cmd_vel
+- /sim2/Humble/pizza_count
+- /sim2/Humble/pose
+- /sim2/Humble/scan
+- /sim2/Iron/cmd_vel
+- /sim2/Iron/pizza_count
+- /sim2/Iron/pose
+- /sim2/Iron/scan
+- /sim2/Noetic/cmd_vel
+- /sim2/Noetic/pizza_count
+- /sim2/Noetic/pose
+- /sim2/Noetic/scan
+- /sim2/eraser/cmd_vel
+- /sim2/eraser/pizza_count
+- /sim2/eraser/pose
+- /sim2/mouse_position
+
+### Services
+
+- /sim1/eraser/eat
+- /sim1/remove_turtle
+- /sim1/sim1/describe_parameters
+- /sim1/sim1/get_parameter_types
+- /sim1/sim1/get_parameters
+- /sim1/sim1/list_parameters
+- /sim1/sim1/set_parameters
+- /sim1/sim1/set_parameters_atomically
+- /sim1/spawn_pizza
+- /sim1/spawn_turtle
+- /sim1/teleoper/describe_parameters
+- /sim1/teleoper/eat
+- /sim1/teleoper/get_parameter_types
+- /sim1/teleoper/get_parameters
+- /sim1/teleoper/list_parameters
+- /sim1/teleoper/set_parameters
+- /sim1/teleoper/set_parameters_atomically
+- /sim1/teleoper/stop
+- /sim2/Foxy/eat
+- /sim2/Foxy/stop
+- /sim2/Humble/eat
+- /sim2/Humble/stop
+- /sim2/Iron/eat
+- /sim2/Iron/stop
+- /sim2/Noetic/eat
+- /sim2/Noetic/stop
+- /sim2/copy/describe_parameters
+- /sim2/copy/get_parameter_types
+- /sim2/copy/get_parameters
+- /sim2/copy/list_parameters
+- /sim2/copy/set_parameters
+- /sim2/copy/set_parameters_atomically
+- /sim2/eraser/eat
+- /sim2/order_to_copy
+- /sim2/remove_turtle
+- /sim2/sim2/describe_parameters
+- /sim2/sim2/get_parameter_types
+- /sim2/sim2/get_parameters
+- /sim2/sim2/list_parameters
+- /sim2/sim2/set_parameters
+- /sim2/sim2/set_parameters_atomically
+- /sim2/spawn_pizza
+- /sim2/spawn_turtle
+- /teleop_twist_keyboard/describe_parameters
+- /teleop_twist_keyboard/get_parameter_types
+- /teleop_twist_keyboard/get_parameters
+- /teleop_twist_keyboard/list_parameters
+- /teleop_twist_keyboard/set_parameters
+- /teleop_twist_keyboard/set_parameters_atomically
+
 ## 📋 Features
 
 - **Dual Simulation Environment**: Operates across two Turtlesim windows (`sim1` and `sim2`)
@@ -125,11 +223,3 @@ ros2 service call /sim1/teleoper/set_eater_kp \
 - The system automatically handles turtle spawning and cleanup
 - Mission progress is tracked automatically across all phases
 - Click precisely in Sim 2 during the cleanup phase for optimal eraser positioning
-
-## 🤝 Contributing
-
-Feel free to submit issues, feature requests, or pull requests to improve this simulation package.
-
-## 📄 License
-
-[Add your license information here]
