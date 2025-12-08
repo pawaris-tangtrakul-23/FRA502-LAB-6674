@@ -31,7 +31,7 @@ git clone --branch exam1 https://github.com/pawaris-tangtrakul-23/FRA502-LAB-667
 2. **Build the workspace**:
 ```bash
 cd FRA502-LAB-6674/
-colcon build --packages-select exam1
+colcon build 
 source install/setup.bash
 ```
 
